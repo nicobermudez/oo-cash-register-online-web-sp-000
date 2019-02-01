@@ -5,14 +5,14 @@ class CashRegister
   def initialize(discount = 0)
     @total=0
     @discount=discount
-    @shopping_cart = []
+    @items = []
   end
 
   def add_item(title, price, quantity=1)
     @total+=(price*quantity)
     @last_transaction = price*quantity
     quantity.times do
-      shopping_cart << title
+      item << title
     end
   end
 
@@ -22,9 +22,7 @@ class CashRegister
     @discount != 0 ? "After the discount, the total comes to $#{@total}." : "There is no discount to apply."
   end
 
-  def items
-    @shopping_cart
-  end
+
 
   def void_last_transaction
     @total-= @last_transaction

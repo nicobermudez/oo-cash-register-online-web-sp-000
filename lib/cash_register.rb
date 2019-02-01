@@ -11,7 +11,7 @@ class CashRegister
   def add_item(title, price, quantity=1)
     @total+=(price*quantity)
     @last_transaction = price*quantity
-    quantity.times do 
+    quantity.times do
       shopping_cart << title
     end
   end
